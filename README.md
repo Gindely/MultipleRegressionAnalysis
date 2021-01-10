@@ -52,6 +52,7 @@ At a given count of x, say in my case is a batting average of 0.250, we can pict
 
 ## Analysis of Output
  a. The t-test
+ 
  	i. We are testing if the population slope for hits and batting average is equal to zero.
     		
 		h<sub>o = &beta;<sub>1 =0
@@ -60,11 +61,13 @@ At a given count of x, say in my case is a batting average of 0.250, we can pict
 	   
  	ii. Test statistic: t-stat =  (b<sub>1- &beta;<sub>1)/(s/√SSx)  =  (760.15209-0)/59.89739=12.69
 
-Rejection Region: |12.69| > 1.970, &alpha;=0.05
+		Rejection Region: |12.69| > 1.970, &alpha;=0.05
 
 		 t-critcal value with 2 d.f. = 1.970
+	Conclusion :	null hypothesis is rejected because the |t-stat| = |53.19| greater than the t-critical value of 1.970
+	
+	iii. For this hypothesis test, if the null hypothesis were true, then the observed t-statistic of 12.69 is a random value taken from t-distribution with 244 degrees of freedom. If we then computed the t-statistic for this same test for each of the 1200246 samples, we would end up with 1200246 t-statistics. If the null hypothesis were true, 5% percent of those 1200246 t-statistics would lie in the rejection region, which is below the t-critical value of -1.970 or above the t-critical value of 1.970.
 
-Conclusion :	null hypothesis is rejected because the |t-stat| = |53.19| greater than the t-critical value of 1.970
 
 
 **fixed acidity:** The predominant fixed acids found in wines are tartaric, malic, citric, and succinic. Wines produced from cool climate grapes are high in acidity and thus taste sour. These high-acid wines can be treated to reduce the acidity.
