@@ -57,9 +57,9 @@ i. We are testing if the population slope for hits and batting average is equal 
 
 h<sub>o = &beta;<sub>1</sub> =0
 	
-h<sub>o = &beta;<sub>1</sub> =! 0
+h<sub>o = &beta;<sub>1</sub> ≠ 0
 	
-ii. Test statistic: t-stat =  (b<sub>1- &beta;<sub>1)/(s/√SSx)  =  (760.15209-0)/59.89739=12.69
+ii. Test statistic: t-stat =  (b<sub>1</sub> - &beta;<sub>1</sub>/(s/√SSx)  =  (760.15209-0)/59.89739=12.69
 	
 Rejection Region: |12.69| > 1.970, &alpha;=0.05
 
