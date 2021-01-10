@@ -46,37 +46,26 @@ Yx= &beta;<sub>o</sub> + &beta;<sub>1</sub>x + &epsilon;
 
 (c)	V(Yx) = the variance of the random variable hits given the players with a batting average of 0.250.
 
-## Dataset
-The dataset can be found here:
-<br>
-https://archive.ics.uci.edu/ml/datasets/wine+quality<br />
-<br>
-The data includes 1,599 observations and the following variables:<br />
-<br>
+## SAS Output for the Fitted Model
+![Singleanalysis](./img/singleanalysis.png) ![Fitplot](./img/fitplot.png) <br />
+At a given count of x, say in my case is a batting average of 0.250, we can picture a vertical line down that count, illustrated in green. That vertical line intersects the 2 dotted lines. The y coordinates of those intersections, illustrated by the purple dots, define the endpoints for the 95% prediction interval for the number of hits of the 247th (the next observation) player. As the vertical line passes through the shaded band, given by the pink slanted lines, it defines the 95% confidence interval for the subpopulation expected value of hits given a batting average of 0.250. Where the vertical line intersects the  line, the red dot, it gives us the point prediction of the number of hits of the 247th player with a batting average of 0.250.
+
+## Analysis of Output
+ a. The t-test
+    i. We are testing if the population slope for hits and batting average is equal to       zero. 
+           h<sub>o = &beta;<sub>1 =0
+           h<sub>o = &beta;<sub>1 =! 0
+ 
+    ii. 	Test statistic: t-stat =  (b<sub>1- &beta;<sub>1)/(s/√SSx)  =  (760.15209-0)/59.89739=12.69
+
+Rejection Region: |12.69| > 1.970, &alpha;=0.05
+	 t-critcal value with 2 d.f. = 1.970
+
+Conclusion :	null hypothesis is rejected because the |t-stat| = |53.19| greater than the t-critical value of 1.970
+
+
 **fixed acidity:** The predominant fixed acids found in wines are tartaric, malic, citric, and succinic. Wines produced from cool climate grapes are high in acidity and thus taste sour. These high-acid wines can be treated to reduce the acidity.
 <br>
-**volatile acidity:** Acetic acid, which is also the primary acid associated with the smell and taste of vinegar.
-<br>
-**citric acid:** An acid supplement during the fermentation process to help winemakers boost the acidity of their wine especially grapes grown in warmer climates.
-<br>
-**residual sugar:** Natural grape sugars leftover in a wine after the alcoholic fermentation finishes.
-<br>
-**chlorides:** Contributes to potential salty taste in wine.
-<br>
-**free sulfur dioxide:** Measure of the amount of SO2 that is not bound to other molecules. Sulfur Dioxide is used throughout all stages of the winemaking process to prevent oxidation and microbial growth.
-<br>
-**total sulfur dioxide:** The portion of SO2 that is free in the wine plus the portion that is bound to other chemicals in the wine such as aldehydes, pigments, or sugars.
-<br>
-**density:** Density of wine is primarily determined by the concentration of alcohol, sugar, glycerol, and other dissolved solids.
-<br>
-**pH:** Way to measure ripeness in relation to acidity.
-<br>
-**sulphates:** Food preservative widely used in winemaking in order to maintain the flavor and freshness.
-<br>
-**alcohol:** The amount of alcohol the wine contains.
-<br>
-**quality:** How the wine is rated. In this dataset the lowest quality is 3 while the highest is 8.
-![Dataview](./img/dataview.png)
 
 ## Models Used
 Linear Regression: Baseline Model
