@@ -3,7 +3,6 @@ Hits in MLB Prediction Project
 ## Table of contents
 * [A Multiple Regression Analysis of Batting Average and Hits](#A-Multiple-Regression-Analysis-of-Batting-Average-and-Hits)
 * [A Simple Regression Model](#A-Simple-Regression-Model)
-* [Matrix Methods](#Matrix-Methods)
 * [Model Selection](#Model-Selection)
 * [Cross Validation](#Cross-Validation)
 
@@ -51,7 +50,8 @@ Yx= &beta;<sub>o</sub> + &beta;<sub>1</sub>x + &epsilon;
 At a given count of x, say in my case is a batting average of 0.250, we can picture a vertical line down that count, illustrated in green. That vertical line intersects the 2 dotted lines. The y coordinates of those intersections, illustrated by the purple dots, define the endpoints for the 95% prediction interval for the number of hits of the 247th (the next observation) player. As the vertical line passes through the shaded band, given by the pink slanted lines, it defines the 95% confidence interval for the subpopulation expected value of hits given a batting average of 0.250. Where the vertical line intersects the  line, the red dot, it gives us the point prediction of the number of hits of the 247th player with a batting average of 0.250.
 
 ## Analysis of Output
- a. The t-test
+
+#### The t-test
  
 i. We are testing if the population slope for hits and batting average is equal to zero.
 
@@ -65,68 +65,11 @@ Rejection Region: |12.69| > 1.970, &alpha;=0.05
 
 t-critcal value with 2 d.f. = 1.970
 
-Conclusion :	null hypothesis is rejected because the |t-stat| = |53.19| greater than the t-critical value of 1.970
+Conclusion :	null hypothesis is rejected because the |t-stat| = |12.69| greater than the t-critical value of 1.970
 
+#### The yhat equation
 
+The equation for the fitted model is as follows:
 
-**fixed acidity:** The predominant fixed acids found in wines are tartaric, malic, citric, and succinic. Wines produced from cool climate grapes are high in acidity and thus taste sour. These high-acid wines can be treated to reduce the acidity.
-<br>
+yhat = -79.721 + 760.152x
 
-## Models Used
-Linear Regression: Baseline Model
-<br>
-KNN
-<br>
-Random Forest
-
-## Methodology
-1. *Data Understanding and Data Cleaning:* Lengths and types of the variables were determined and data was checked for missing values. The dataset consists of all numeric variables. The dataset doesn't contain missing values.
-
-2. *Exploratory Analysis:* Created visualizations to explore the target variable and examine the potential existance of outliers or corrupt data. Further visualized the relationship between the target and the feature variables and relationships between features.<br />
-
-First, I examined the target variable, quality. The average of wines in this dataset are rated 5 or 6 and target variable is normally distributed.
-![Targetviz](./img/targetplot.png) <br />
-
-Second, a distribution plot and a box plot was created to examine the distribution of each feature and the interaction between feature and target respectively. 
-![Featplot](./img/featplot.png) <br />
-
-Lastly, a heatmap was created to further examine the degree of correlation between varibles.
-![Heatmap](./img/heatmap.png) <br />
-
-The highest positively correlated variables are:
-* citric acid and fixed acidity
-* density and fixed acidity
-* alcohol and quality <br />
-
-The highest negatively correlated variables are:
-* citric acid and volatile acidity
-* pH and fixed acidity
-* pH and citric acidity
-* denisty and alcohol <br />
-
-3. *Feature Selection and Feature Engineering:* In order to access which features to use for the linear regression model, I reviewed the p-values for each feature in order to determine with features showed staistical significance. I applied backward elimination in order to select the best features for the model. The variance inflation factor shows that mulicollinearity does not exist in the model selected. For the random forest model, I applied binning to quality. Wines of quality 3-4 were considered as low, 5-6 were considered medium, and 7-8 were considered high quality. <br>
-![Selfeatures](./img/selfeatures.png) ![Vif](./img/vif.png) <br />
-
-4. *Model Building and Evaluation:* Established a baseline model and developed two additional models to see if I could improve upon the baseline. For each model a train-test split of 70%-30% was used. Each models were then fitted. <br />
-
-### Baseline Model: Linear Regression
-![Regressionplot](./img/regressionplot.png) <br />
-  *MSE:* .39 <br>
-  *R-squared:* 38% <br />
-### KNN
-![Knn](./img/knn.png) <br />
-  *MSE:* .44 <br>
-  *Accuracy:* 67% <br />
-### Random Forest
-![Randomforest](./img/randomforest.png) ![Distplotrf](./img/distplotrf.png) <br />
-  *MSE:* .18 <br>
-  *Accuracy:* 82% <br />
-
-5. *Scoring the Dataset:* Evaluated the performance of each model based on MSE and R-squared/Accuracy. The model with lowest MSE and highest R-squared or Accuracy was selected for quality prediction.
-
-## Model Results and Selection
-**Random Forest gave the best prediction of quality with MSE of .18 and Accuracy of 82%.**
-The distribution plot for the choosen model shows that the predicted values are very close to the actual values with a bit of an overestimation in the prediction of wines of "medium" quality and a slight underestimation in "low" and "high" quality wines. <br />
-<br>
-The plot below demostrates the level of importance of each feature on the quality of wine. The feature with the highest influence on quality is alcohol. <br>
-![featimp](./img/featimp.png)<br />
