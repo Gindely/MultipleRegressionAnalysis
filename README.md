@@ -1,7 +1,8 @@
 # Predictors on the Productivity of Hits in 2017 Major League Baseball
-Hits in MLB Prediction Project
+
 ## Table of contents
 * [A Multiple Regression Analysis of Batting Average and Hits](#A-Multiple-Regression-Analysis-of-Batting-Average-and-Hits)
+** [Introduction](#Intoduction)
 * [A Simple Regression Model](#A-Simple-Regression-Model)
 * [Model Selection](#Model-Selection)
 * [Cross Validation](#Cross-Validation)
@@ -120,7 +121,7 @@ The first step I took was to split the existing data into two groups. I did this
 
 Now I fit the regression model on the training sample.
 
-Obs	b0	     b1	        b2	b3	  IntMSE
+Obs	b0	     b1	        b2	b3	  IntMSE <br>
 1	-179.334     892.943	0.46401	0.34825	  389.806
 
 *Step 3: Out of Sample Forecasting*
@@ -134,7 +135,7 @@ Next, I used the resulting  equation to forecast the number of hits for the Vali
 In order to measure the quality of fit, we need to compare the Internal MSE (MSE for the training sample) with the External MSE (MSE for the validation sample). If the training MSE and the validation MSE are similar in value, then we can say that this is evidence for validating the chosen model. 
 
 
-Obs	_TYPE_	_FREQ_	IntMSE	ExtMSE
+Obs	_TYPE_	_FREQ_	IntMSE	ExtMSE <br>
 1	0	146	389.806	539.500
 
 Since, the slope estimates are computed in such a fashion as to minimize the Internal MSE, we must expect that the External MSE will be larger than the Internal MSE. We can use the following equation to account for how much larger the External MSE will be from the internal MSE:
