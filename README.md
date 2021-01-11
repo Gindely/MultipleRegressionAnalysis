@@ -8,13 +8,13 @@
 * [A Simple Regression Model](#A-Simple-Regression-Model)
 	- [Scatterplot](#Scatterplot)
 	- [The Linear Regression Model](#The-Linear-Regression-Model)
-	- [SAS Outplot for the Fitted Model](#SAS-Outplot-for-the-Fitted-Model)
+	- [SAS Output for the Fitted Model](#SAS-Outplot-for-the-Fitted-Model)
 	- [Analysis of Outplot](#Analysis-of-Output)
 * [Model Selection](#Model-Selection)
 	- [Best Subsets Model Selection](#Best-Subsets-Model-Selection)
 	- [Forward Stepwide Model Selection](#Forward-Stepwide-Model-Selection)
+	- [Cook's D](#Cook's-D)
 	- [Variance Inflation](#Variance-Inflation)
-	- [Cook’s D](#Cook’s-D)
 * [Cross Validation](#Cross-Validation)
 	- [Model Selection with GLMSelect](#Model-Selection-with-GLMSelect)
 	- [Quality of the Fitted Model: Steps for Cross Validation](#Quality-of-the-Fitted-Model:-Steps-for-Cross-Validation)
@@ -98,10 +98,6 @@ I tried taking log and square root transformations, but I didn’t notice any ob
 
 The model I prefer includes Walks, Batting Average and Strikeouts. C(p), AIC, BIC, and SBC, all agree that a model with 4 parameters is best, which means the model has 3 regressors. Next to the star aligned with the 4 parameters, a 2 is shown. Therefore, looking at the Summary Table above Model number 2 shows that the best model includes, Walks, Batting Average, and Strikeouts.
 
-Below are the diagnostic plots for the model selected above. The plots show the flagged players according to Cook’s D and Outlier and Leverage Plot. Aaron Judge seems to be the most obvious influential point according to both diagnostic plots. 
-
-![Cooksd](./img/cooksd.png) ![Leverage](./img/leverage.png)
-
 ### Forward Stepwide Model Selection
 
 According to the summary of the Stepwise Model Selection, the first variable selected was Batting Average. Then it added Strikeouts and did not remove Batting Average. Next, it added Walks and did not remove any of the previous variables. Finally, the selection method stopped and did not add the last variable which is Age.
@@ -109,7 +105,13 @@ According to the summary of the Stepwise Model Selection, the first variable sel
 ![Stepwise](./img/stepwise.png) <br>
 The Stepwise Selection method choose the same model as the best subsets method. 
 
-### VIF
+### Cook's D
+
+Below are the diagnostic plots for the model selected above. The plots show the flagged players according to Cook’s D and Outlier and Leverage Plot. Aaron Judge seems to be the most obvious influential point according to both diagnostic plots. 
+
+![Cooksd](./img/cooksd.png) ![Leverage](./img/leverage.png)
+
+### Variance Inflation
 
 ![Vif](./img/vif.png)
 
