@@ -113,6 +113,8 @@ Below are the diagnostic plots for the model selected above. The plots show the 
 
 ### Variance Inflation
 
+Variance Inflation, shows if multicollinearity exists in our analysis. If the VIF is high, the variance of the standard errors of the slope is increased because of collinearity. It helps us identify if we are regressing one variable on another almost identical to itself. All variables are close to 1, therefore multivollinearity does not exist.
+
 ![Vif](./img/vif.png)
 
 ## Cross-Validation
