@@ -12,7 +12,7 @@
 	- [Analysis of Outplot](#Analysis-of-Output)
 * [Model Selection](#Model-Selection)
 	- [Best Subsets Model Selection](#Best-Subsets-Model-Selection)
-	- [Forward Stepwide Model Selection](#Forward-Stepwide-Model-Selection)
+	- [Forward Stepwise Model Selection](#Forward-Stepwise-Model-Selection)
 	- [Cook's D](#Cooks-D)
 	- [Variance Inflation](#Variance-Inflation)
 * [Cross Validation](#Cross-Validation)
@@ -98,7 +98,7 @@ I tried taking log and square root transformations, but I didn’t notice any ob
 
 The model I prefer includes Walks, Batting Average and Strikeouts. C(p), AIC, BIC, and SBC, all agree that a model with 4 parameters is best, which means the model has 3 regressors. Next to the star aligned with the 4 parameters, a 2 is shown. Therefore, looking at the Summary Table above Model number 2 shows that the best model includes, Walks, Batting Average, and Strikeouts.
 
-### Forward Stepwide Model Selection
+### Forward Stepwise Model Selection
 
 According to the summary of the Stepwise Model Selection, the first variable selected was Batting Average. Then it added Strikeouts and did not remove Batting Average. Next, it added Walks and did not remove any of the previous variables. Finally, the selection method stopped and did not add the last variable which is Age.
 
