@@ -65,7 +65,7 @@ Rejection Region: |12.69| > 1.970, &alpha;=0.05
 
 t-critcal value with 2 d.f. = 1.970
 
-Conclusion :	null hypothesis is rejected because the |t-stat| = |12.69| greater than the t-critical value of 1.970
+Conclusion :	null hypothesis is rejected because the |t-stat| = |53.19| greater than the t-critical value of 1.970
 
 #### The yhat equation
 
