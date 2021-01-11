@@ -13,11 +13,11 @@
 * [Model Selection](#Model-Selection)
 	- [Best Subsets Model Selection](#Best-Subsets-Model-Selection)
 	- [Forward Stepwide Model Selection](#Forward-Stepwide-Model-Selection)
-	- [Cook's D](#Cook&apostrophe;s-D)
+	- [Cook's D](#Cooks-D)
 	- [Variance Inflation](#Variance-Inflation)
 * [Cross Validation](#Cross-Validation)
 	- [Model Selection with GLMSelect](#Model-Selection-with-GLMSelect)
-	- [Quality of the Fitted Model: Steps for Cross Validation](#Quality-of-the-Fitted-Model&colon;-Steps-for-Cross-Validation)
+	- [Quality of the Fitted Model: Steps for Cross Validation](#Quality-of-the-Fitted-Model-Steps-for-Cross-Validation)
 
 ## A Multiple Regression Analysis of Batting Average and Hits
 
