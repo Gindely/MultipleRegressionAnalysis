@@ -3,13 +3,27 @@
 ## Table of contents
 * [A Multiple Regression Analysis of Batting Average and Hits](#A-Multiple-Regression-Analysis-of-Batting-Average-and-Hits)
 	- [Introduction](#Intoduction)
+	- [Data Source](#Data-Source)
+	- [Variables](#Variables)
 * [A Simple Regression Model](#A-Simple-Regression-Model)
+	- [Scatterplot](#Scatterplot)
+	- [The Linear Regression Model](#The-Linear-Regression-Model)
+	- [SAS Outplot for the Fitted Model](#SAS-Outplot-for-the-Fitted-Model)
+	- [Analysis of Outplot](#Analysis-of-Output)
 * [Model Selection](#Model-Selection)
+	- [Best Subsets Model Selection](#Best-Subsets-Model-Selection)
+	- [Forward Stepwide Model Selection](#Forward-Stepwide-Model-Selection)
+	- [Variance Inflation](#Variance-Inflation)
+	- [Cook’s D](#Cook’s-D)
 * [Cross Validation](#Cross-Validation)
+	- [Model Selection with GLMSelect](#Model-Selection-with-GLMSelect)
+	- [Quality of the Fitted Model: Steps for Cross Validation](#Quality-of-the-Fitted-Model:-Steps-for-Cross-Validation)
 
 ## A Multiple Regression Analysis of Batting Average and Hits
+
 ### Introduction
 The topic of this subject matter is on the starting lineup for all teams in the 2017 MLB season. I’ve been a baseball fan, specifically of the Yankees, since around 10 years old. I would watch the games with my family and we would cause so much commotion that my mother would think something bad had happened. I became such a giant fan of the Yankees throughout the years that I even got season tickets. Admittingly, I started to grow tired of baseball after that year, maybe it was all the travelling to the Bronx that I had to do, but in recent years my interest has started to slowly grow back. Therefore, for this analysis I’m interested in seeing how specific variables affect hits.
+
 ### Data Source
 I was able to pull up the statistic for the starting lineup for 2017 of all Major League Baseball Teams on the following website:
 https://www.baseball-reference.com/leagues/MLB/2017.shtml
@@ -33,7 +47,6 @@ Walks: occurs when a batter receives four pitches outside the strike zone and is
 ### Scatterplot
 ![Scatterplot](./img/scatterplot.png)
 
-### Analysis of Scatterplot
 I don’t see obvious curvature in my data. We can see a bit of heteroscedasticity towards the bottom of the scatterplot. The pink line illustrates the vertical cut in the data. It could be that these players didn’t play a full season due to an injury or they might have just had a very bad year. No real leverage or outliers exist in this scatterplot. The two points that are separated by the pink line fall in line with the rest of the data and aren’t dramatically far away from the rest of the data points.
 
 ### The Linear Regression Model
@@ -50,7 +63,7 @@ Yx= &beta;<sub>o</sub> + &beta;<sub>1</sub>x + &epsilon;
 ![Singleanalysis](./img/singleanalysis.png) ![Fitplot](./img/fitplot.png) <br />
 At a given count of x, say in my case is a batting average of 0.250, we can picture a vertical line down that count, illustrated in green. That vertical line intersects the 2 dotted lines. The y coordinates of those intersections, illustrated by the purple dots, define the endpoints for the 95% prediction interval for the number of hits of the 247th (the next observation) player. As the vertical line passes through the shaded band, given by the pink slanted lines, it defines the 95% confidence interval for the subpopulation expected value of hits given a batting average of 0.250. Where the vertical line intersects the  line, the red dot, it gives us the point prediction of the number of hits of the 247th player with a batting average of 0.250.
 
-## Analysis of Output
+### Analysis of Output
 
 #### The t-test
  
@@ -76,6 +89,7 @@ yhat = -79.721 + 760.152x
 
 ## Model Selection
 
+### Best Subsets Model Selection
 ![Matrix](./img/matrix.png)
 
 I tried taking log and square root transformations, but I didn’t notice any obvious improvements in the data. In the scatterplot showing Hits and Age, I don’t see an obvious relationship. It seems to be negatively correlated but it isn’t a very strong one. In the scatterplot showing Hits vs. Walks there are a couple of leverage points which I have circled in purple. They lie a bit far in the horizontal direction, away from the rest of the data.
@@ -88,26 +102,26 @@ Below are the diagnostic plots for the model selected above. The plots show the 
 
 ![Cooksd](./img/cooksd.png) ![Leverage](./img/leverage.png)
 
-#### Forward Stepwide Model Selection
+### Forward Stepwide Model Selection
 
 According to the summary of the Stepwise Model Selection, the first variable selected was Batting Average. Then it added Strikeouts and did not remove Batting Average. Next, it added Walks and did not remove any of the previous variables. Finally, the selection method stopped and did not add the last variable which is Age.
 
 ![Stepwise](./img/stepwise.png) <br>
 The Stepwise Selection method choose the same model as the best subsets method. 
 
-#### VIF
+### VIF
 
 ![Vif](./img/vif.png)
 
 ## Cross-Validation
 
-#### Model Selection with GLMSelect
+### Model Selection with GLMSelect
 
 I used Proc GLMSelect in SAS, with AICC as a selection criterion. The first variable selected was Batting Average, then it chose Strikeouts, next it chose Walks. The bold line at 3 indicates that those three variables are the best model for Hits. 
 
 ![Cv](./img/cv.png)
 
-#### Quality of the Fitted Model: Steps for Cross Validation
+### Quality of the Fitted Model: Steps for Cross Validation
 
 I used Cross Validation to judge the quality of the fitted model shown above. 
 	
