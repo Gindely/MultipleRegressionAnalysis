@@ -2,7 +2,7 @@
 
 ## Table of contents
 * [A Multiple Regression Analysis of Batting Average and Hits](#A-Multiple-Regression-Analysis-of-Batting-Average-and-Hits)
-** [Introduction](#Intoduction)
+	- [Introduction](#Intoduction)
 * [A Simple Regression Model](#A-Simple-Regression-Model)
 * [Model Selection](#Model-Selection)
 * [Cross Validation](#Cross-Validation)
