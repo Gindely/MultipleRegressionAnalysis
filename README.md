@@ -75,10 +75,6 @@ h<sub>o = &beta;<sub>1</sub> ≠ 0
 	
 ii. Test statistic: t-stat =  (b<sub>1</sub> - &beta;<sub>1</sub>/(s/√SSx)  =  (760.15209-0)/59.89739=12.69
 
-![\Large t-stat=\frac{-b\pm\sqrt{b^2-4ac}}{2a}]
-
-![\Large t-stat=\frac{b<sub>1</sub> - &beta;<sub>1</sub>/}{s\sqrt{SSx}}]
-
 Rejection Region: |12.69| > 1.970, &alpha;=0.05
 
 t-critcal value with 2 d.f. = 1.970
